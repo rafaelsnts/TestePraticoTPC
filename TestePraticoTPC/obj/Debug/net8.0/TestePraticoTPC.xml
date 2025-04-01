@@ -1,0 +1,89 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>TestePraticoTPC</name>
+    </assembly>
+    <members>
+        <member name="T:TestePraticoTPC.Controllers.AuthController">
+            <summary>
+            Controlador responsável pela autenticação de usuários.
+            </summary>
+        </member>
+        <member name="M:TestePraticoTPC.Controllers.AuthController.#ctor(TestePraticoTPC.Data.Repository.IUsuarioRepository,TestePraticoTPC.Services.TokenService)">
+            <summary>
+            Construtor do AuthController.
+            </summary>
+            <param name="usuarioRepository">Repositório de usuários.</param>
+            <param name="tokenService">Serviço de geração de token.</param>
+        </member>
+        <member name="M:TestePraticoTPC.Controllers.AuthController.Login(TestePraticoTPC.Models.DTOs.LoginDTO)">
+            <summary>
+            Autentica um usuário e retorna um token JWT.
+            </summary>
+            <param name="loginDto">Dados do usuário (email e senha).</param>
+            <returns>Token JWT em caso de sucesso.</returns>
+            <response code="200">Retorna o token JWT.</response>
+            <response code="401">Credenciais inválidas.</response>
+        </member>
+        <member name="M:TestePraticoTPC.Controllers.AuthController.HashPassword(System.String)">
+            <summary>
+            Gera um hash SHA256 da senha informada.
+            </summary>
+            <param name="password">Senha em texto plano.</param>
+            <returns>Senha criptografada em Base64.</returns>
+        </member>
+        <member name="T:TestePraticoTPC.Controllers.TarefasController">
+            <summary>
+            Controlador para gerenciar tarefas.
+            </summary>
+        </member>
+        <member name="M:TestePraticoTPC.Controllers.TarefasController.GetTarefa(System.Int32)">
+            <summary>
+            Obtém uma tarefa específica pelo ID.
+            </summary>
+            <param name="id">ID da tarefa.</param>
+            <returns>Retorna a tarefa encontrada ou NotFound se não existir.</returns>
+        </member>
+        <member name="M:TestePraticoTPC.Controllers.TarefasController.GetTarefas(System.Int32)">
+            <summary>
+            Obtém todas as tarefas de um usuário específico.
+            </summary>
+            <param name="id">ID do usuário</param>
+        </member>
+        <member name="M:TestePraticoTPC.Controllers.TarefasController.CreateTarefa(TestePraticoTPC.Models.DTOs.TarefaDTO)">
+            <summary>
+            Cria uma nova tarefa para o usuário autenticado.
+            </summary>
+            <param name="tarefaDto">Dados da nova tarefa</param>
+        </member>
+        <member name="M:TestePraticoTPC.Controllers.TarefasController.DeleteTarefa(System.Int32)">
+            <summary>
+            Exclui uma tarefa pelo ID.
+            </summary>
+            <param name="id">ID da tarefa.</param>
+            <returns>Retorna NoContent se excluído com sucesso ou NotFound se a tarefa não existir.</returns>
+        </member>
+        <member name="T:TestePraticoTPC.Controllers.UsuariosController">
+            <summary>
+            Controlador responsável pela gestão de usuários.
+            </summary>
+        </member>
+        <member name="M:TestePraticoTPC.Controllers.UsuariosController.GetUsuarios">
+            <summary>
+            Obtém todos os usuários cadastrados.
+            </summary>
+        </member>
+        <member name="M:TestePraticoTPC.Controllers.UsuariosController.GetUsuario(System.Int32)">
+            <summary>
+            Obtém um usuário específico pelo ID.
+            </summary>
+            <param name="id">ID do usuário</param>
+        </member>
+        <member name="M:TestePraticoTPC.Controllers.UsuariosController.CreateUsuario(TestePraticoTPC.Models.DTOs.RegisterDTO)">
+            <summary>
+            Cria um novo usuário.
+            </summary>
+            <param name="registerDto">Dados do usuário a ser cadastrado</param>
+        </member>
+    </members>
+</doc>
